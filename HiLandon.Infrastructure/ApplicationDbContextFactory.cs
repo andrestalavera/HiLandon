@@ -12,14 +12,14 @@ public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Applicati
 	{
 		// For local development: get the connection string from the user secrets of the backend project
 		IConfigurationRoot configuration = new ConfigurationBuilder().AddUserSecrets("HiLandon").Build();
-		string? connectionString = configuration.GetConnectionString("DefaultConnection");
+		string? connectionString = configuration.GetConnectionString("DefaultDatabase");
+		System.Console.WriteLine("***" + connectionString);
 
 		if (connectionString == null)
 			throw new Exception("No connection string found.");
 
 		DbContextOptionsBuilder<ApplicationDbContext> builder = new();
-		// DbContextOptions<ApplicationDbContext> options = builder.UseSqlServer(connectionString, x => x.CommandTimeout(900)).Options;
-		DbContextOptions<ApplicationDbContext> options = builder.UseInMemoryDatabase(connectionString).Options;
+		DbContextOptions<ApplicationDbContext> options = builder.UseSqlServer(connectionString).Options;
 		return new(options);
 	}
 }
