@@ -15,7 +15,7 @@ builder.RootComponents.Add<App>("#app");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Configuration.AddUserSecrets("HiLandon");
-string connectionString = builder.Configuration.GetConnectionString("DefaultDatabase");
+string connectionString = builder.Configuration.GetConnectionString("DefaultDatabase") ?? throw new InvalidOperationException("Could not find connection string");
 Console.WriteLine($"*** Connection string: {connectionString}");
 builder.Services.AddDbContextFactory<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddScoped<IPostsRepository, PostsRepository>();
