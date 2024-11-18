@@ -1,45 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Configurations>Debug;Release;V1;V2;V3</Configurations>
-    <UserSecretsId>HiLandon</UserSecretsId>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>$(DefineConstants);V1;V2;V3</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='V1|AnyCPU'">
-    <DefineConstants>$(DefineConstants);V1;V2;V3</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='V2|AnyCPU'">
-    <DefineConstants>$(DefineConstants);V1;V2;V3</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='V3|AnyCPU'">
-    <DefineConstants>$(DefineConstants);V1;V2;V3</DefineConstants>
+	<UserSecretsId>HiLandon</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.0" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="Pages\CreateBlogPost.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\HiLandon.Infrastructure\HiLandon.Infrastructure.csproj" />
-    <ProjectReference Include="..\HiLandon.Core\HiLandon.Core.csproj" />
     <ProjectReference Include="..\HiLandon.Application\HiLandon.Application.csproj" />
+    <ProjectReference Include="..\HiLandon.Core\HiLandon.Core.csproj" />
+    <ProjectReference Include="..\HiLandon.Infrastructure\HiLandon.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
