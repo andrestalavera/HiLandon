@@ -5,7 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Configurations>Debug;Release;V1;V2;V3</Configurations>
-	</PropertyGroup>
+	  <UserSecretsId>HiLandon</UserSecretsId>
+  </PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<DefineConstants>$(DefineConstants);V1;V2;V3</DefineConstants>
@@ -23,19 +24,15 @@
 		<DefineConstants>$(DefineConstants);V1;V2;V3</DefineConstants>
 	</PropertyGroup>
 
-	<ItemGroup Condition="'$(Configuration)'=='V1'">
-		<Compile Remove="*User*" />
-		<Compile Remove="*Tag*" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(Configuration)'=='V2'">
-		<Compile Remove="*Tag*" />
-	</ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		  <PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

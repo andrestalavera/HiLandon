@@ -11,14 +11,15 @@ public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Applicati
 	public ApplicationDbContext CreateDbContext(string[] args)
 	{
 		// For local development: get the connection string from the user secrets of the backend project
-		IConfigurationRoot configuration = new ConfigurationBuilder().Build();
+		IConfigurationRoot configuration = new ConfigurationBuilder().AddUserSecrets("HiLandon").Build();
 		string? connectionString = configuration.GetConnectionString("DefaultConnection");
 
 		if (connectionString == null)
 			throw new Exception("No connection string found.");
 
 		DbContextOptionsBuilder<ApplicationDbContext> builder = new();
-		DbContextOptions<ApplicationDbContext> options = builder.UseSqlServer(connectionString, x => x.CommandTimeout(900)).Options;
+		// DbContextOptions<ApplicationDbContext> options = builder.UseSqlServer(connectionString, x => x.CommandTimeout(900)).Options;
+		DbContextOptions<ApplicationDbContext> options = builder.UseInMemoryDatabase(connectionString).Options;
 		return new(options);
 	}
 }
