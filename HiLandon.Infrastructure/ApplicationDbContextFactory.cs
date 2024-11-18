@@ -13,7 +13,6 @@ public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Applicati
 		// For local development: get the connection string from the user secrets of the backend project
 		IConfigurationRoot configuration = new ConfigurationBuilder().AddUserSecrets("HiLandon").Build();
 		string? connectionString = configuration.GetConnectionString("DefaultDatabase");
-		System.Console.WriteLine("***" + connectionString);
 
 		if (connectionString == null)
 			throw new Exception("No connection string found.");

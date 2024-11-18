@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore.Internal;
 
 namespace HiLandon.Infrastructure.Repositories;
 
-public class Repository<TEntity>(DbContextFactory<ApplicationDbContext> factory) : IRepository<TEntity>
+public class Repository<TEntity>(DbContextFactory<ApplicationDbContext> factory) 
+    : IRepository<TEntity>
     where TEntity : class, new()
 {
     public async Task<TEntity> AddOrUpdate(TEntity entity, CancellationToken cancellationToken = default)

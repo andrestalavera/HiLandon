@@ -26,6 +26,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +38,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HiLandon.Infrastructure\HiLandon.Infrastructure.csproj" />
     <ProjectReference Include="..\HiLandon.Core\HiLandon.Core.csproj" />
+    <ProjectReference Include="..\HiLandon.Application\HiLandon.Application.csproj" />
   </ItemGroup>
 
 </Project>

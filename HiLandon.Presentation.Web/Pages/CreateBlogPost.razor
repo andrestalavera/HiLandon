@@ -1,5 +1,24 @@
 ﻿@page "/create-post"
+@using HiLandon.Application.Posts;
+@inject CreateOrUpdatePostHandler CreateOrUpdatePostHandler
 
 <PageTitle>Create Post</PageTitle>
 
-<h1>Create Post</h1>
+<div class="container">
+    <h1>Create Post</h1>
+    <div class="mb-3">
+        <label for="title-form-control" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title-form-control" />
+    </div>
+    <div class="mb-3">
+        <label for="content-form-control" class="form-label">Title</label>
+        <textarea class="form-control" id="content-form-control" rows="3" />
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary">Create Post</button>
+    </div>
+</div>
+
+@code{
+    
+}
