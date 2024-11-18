@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Internal;
 
 namespace HiLandon.Infrastructure.Repositories;
 
-public class Repository<TEntity>(DbContextFactory<ApplicationDbContext> factory) 
+public class Repository<TEntity>(IDbContextFactory<ApplicationDbContext> factory) 
     : IRepository<TEntity>
     where TEntity : class, new()
 {
