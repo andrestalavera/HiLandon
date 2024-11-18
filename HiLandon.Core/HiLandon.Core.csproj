@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Configurations>Debug;Release;V1;V2;V3</Configurations>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DefineConstants>$(DefineConstants);V1;V2;V3</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='V1|AnyCPU'">
+		<DefineConstants>$(DefineConstants);V1;V2;V3</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='V2|AnyCPU'">
+		<DefineConstants>$(DefineConstants);V1;V2;V3</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='V3|AnyCPU'">
+		<DefineConstants>$(DefineConstants);V1;V2;V3</DefineConstants>
+	</PropertyGroup>
+
+	<!-- <ItemGroup Condition="'$(Configuration)'=='V1'">
+		<Compile Remove="*User*" />
+		<Compile Remove="*Tag*" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(Configuration)'=='V2'">
+		<Compile Remove="*Tag*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Entities\Tag.cs" />
+	  <Compile Remove="Entities\User.cs" />
+	  <Compile Remove="Repositories\ITagsRepository.cs" />
+	  <Compile Remove="Repositories\IUsersRepository.cs" />
+	</ItemGroup> -->
+
+</Project>
