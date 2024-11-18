@@ -1,4 +1,5 @@
-using HiLandon.Infrastructure;
+using HiLandon.Core.Repositories;
+using HiLandon.Infrastructure.Repositories;
 using HiLandon.Presentation.Web;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;

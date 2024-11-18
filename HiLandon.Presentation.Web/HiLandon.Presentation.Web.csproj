@@ -36,6 +36,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HiLandon.Infrastructure\HiLandon.Infrastructure.csproj" />
+    <ProjectReference Include="..\HiLandon.Core\HiLandon.Core.csproj" />
   </ItemGroup>
 
 </Project>
